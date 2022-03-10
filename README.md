@@ -1,7 +1,7 @@
 # Build it:
 ```bash
-git clone https://github.com/sonnyyu/mtls-nginx
-cd mtls-nginx
+git clone https://github.com/sonnyyu/mtls-apache
+cd mtls-apache
 ```
 # Use mtls-cert-manage generate certificate 
 
