@@ -10,8 +10,8 @@ cd mtls-apache
 # Copy all the certificate 
 ```bash
 cd ~/mtls-cert-manage/cert
-cp *   ~/mtls-nginx/cert
-cp ca.crt localhost.crt localhost.key   ~/mtls-nginx/nginx/cert/
+cp *   ~/mtls-apache/cert
+cp ca.crt localhost.crt localhost.key   ~/mtls-apache/httpd/cert/
 ```
 # Getting started nginx with certificate
 ```bash
