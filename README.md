@@ -15,22 +15,22 @@ cp ca.crt localhost.crt localhost.key   ~/mtls-apache/httpd/cert/
 ```
 # Getting started nginx with certificate
 ```bash
-cd ~/mtls-nginx
-docker-compose up -d --build
+cd ~/mtls-apache
+docker-compose up -d 
 ```
 # Quit 
 ```bash
-~/mtls-nginx
+cd ~/mtls-apache
 docker-compose down 
 ```
 # Quit and remove Volume
 ```bash
-~/mtls-nginx
+cd ~/mtls-apache
 docker-compose down -v
 ```
 # Test mTlS
 ```bash
-cd mtls-nginx/cert
+cd ~/mtls-apache/cert
 curl --cert client1.crt --key client1.key --cacert ca.crt https://192.168.1.204
 curl --cert client1.crt:password1 --key client1.key --cacert ca.crt https://192.168.1.204
 curl --cert-type P12 --cert client1.p12 --cacert ca.crt https://192.168.1.204
