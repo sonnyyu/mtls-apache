@@ -1,0 +1,10 @@
+services:
+  apache:
+    image: httpd:2.4
+    ports:
+      - '80:80'
+      - '443:443'
+    volumes:
+      - ./httpd/conf/httpd.conf:/usr/local/apache2/conf/httpd.conf:ro
+      - ./httpd/conf/httpd-ssl.conf:/usr/local/apache2/conf/httpd-ssl.conf:ro
+      - ./httpd/cert:/usr/local/apache2/logs
