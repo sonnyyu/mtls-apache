@@ -1,10 +1,20 @@
 services:
   apache:
     image: httpd:2.4
+    container_name: apache
     ports:
       - '80:80'
       - '443:443'
     volumes:
       - ./httpd/conf/httpd.conf:/usr/local/apache2/conf/httpd.conf:ro
       - ./httpd/conf/httpd-ssl.conf:/usr/local/apache2/conf/httpd-ssl.conf:ro
-      - ./httpd/cert:/usr/local/apache2/logs
+      - ./httpd/certs/192.168.1.204.crt:/usr/local/apache2/conf/localhost.crt
+      - ./httpd/certs/192.168.1.204.key:/usr/local/apache2/conf/localhost.key
+      - ./httpd/certs/ca.crt:/usr/local/apache2/conf/ca.crt
+    restart: always
+    networks:
+      - apache
+networks:
+  apache:
+    driver: bridge
+    name: apache
