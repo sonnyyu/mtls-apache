@@ -3,15 +3,24 @@
 git clone https://github.com/sonnyyu/mtls-apache
 cd mtls-apache
 ```
-# Use mtls-cert-manage generate certificate 
+# Use mtls-cert-manage generate server/client/ca certificate 
 
 [https://github.com/sonnyyu/mtls-cert-manage](https://github.com/sonnyyu/mtls-cert-manage)
 
-# Copy all the certificate 
+# Copy Certificate from mtls-cert-manage
 ```bash
-cd ~/mtls-cert-manage/cert
-cp *   ~/mtls-apache/cert
-cp ca.crt localhost.crt localhost.key   ~/mtls-apache/httpd/cert/
+cd ~/mtls-cert-manage/pki
+./server.sh
+./client.sh
+```
+# Copy Certificate from mtls-cert-manage
+```bash
+cd ~/mtls-cert-manage/pki/servercerts 
+cp * ~/mtls-apache/certs
+cd ~/mtls-cert-manage/pki/clientcerts
+cp * ~/mtls-apache/certs
+cd ~/mtls-apache/certs
+cp 192.168.1.204.crt 192.168.1.204.key ca.crt ~/mtls-apache/http/certs
 ```
 # Getting started nginx with certificate
 ```bash
