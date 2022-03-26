@@ -1,10 +1,5 @@
-# Build it:
-```bash
-git clone https://github.com/sonnyyu/mtls-apache
-cd mtls-apache
-```
-# Use mtls-cert-manage generate server/client/ca certificate 
 
+# Use mtls-cert-manage generate server/client/ca certificate 
 [https://github.com/sonnyyu/mtls-cert-manage](https://github.com/sonnyyu/mtls-cert-manage)
 
 # Copy Certificate from mtls-cert-manage
@@ -12,6 +7,11 @@ cd mtls-apache
 cd ~/mtls-cert-manage/pki
 ./server.sh
 ./client.sh
+```
+# Build it:
+```bash
+git clone https://github.com/sonnyyu/mtls-apache
+cd mtls-apache
 ```
 # Copy Certificate from mtls-cert-manage
 ```bash
